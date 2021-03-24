@@ -1,5 +1,6 @@
 var http = require('http');
 var fs = require('fs');
+var moment = require('moment');
 
 // createServer takes a callback
 // which is an event listener
@@ -18,6 +19,7 @@ http.createServer(function(request, response) {
             var obj = {
                 firstName: 'John',
                 lastName: 'Doe',
+                date: moment().format('ddd, hA'),
             };
             response.end(JSON.stringify(obj));
             break;
